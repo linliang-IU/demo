@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: dev
+
+  jpa:
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+    #是否打印Jpa生成的sql语句,生产环境可以关闭
+    show-sql: true
+    #数据库生成策略，如果打开会根据entity对象生成数据库。初始化的时候可以改为update,如果新增属性，数据库会自动添加。删除属性数据库不会变化
+    hibernate:
+      ddl-auto: update
+
+#服务注册名
+  application:
+    name: testDemo
+
+eureka:
+  client:
+    #将服务注册到Eureka
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
